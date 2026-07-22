@@ -6,7 +6,6 @@ void main() {
     "Sneha",
     "Karan"
   ];
-
   Map<String, int> marks = {
     "Rahul": 85,
     "Priya": 72,
@@ -14,7 +13,6 @@ void main() {
     "Sneha": 65,
     "Karan": 38
   };
-
   for (int i = 0; i < students.length; i++) {
     print(students[i]);
   }
