@@ -4,6 +4,7 @@ void main() {
   runApp(const MyApp());
 }
 
+// Stateless Widget
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -11,121 +12,104 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BurgerCard(),
+      home: const HomeScreen(),
     );
   }
 }
 
-class BurgerCard extends StatelessWidget {
-  const BurgerCard({super.key});
+// Stateful Widget
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  bool isFollowing = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Cheese Burger Card"),
-        backgroundColor: Colors.deepOrange,
+        title: Text(
+          isFollowing ? "Following Profile" : "Flutter Profile",
+        ),
+        backgroundColor:
+        isFollowing ? Colors.green : Colors.blue,
       ),
-      backgroundColor: const Color(0xfff8f6fb),
       body: Center(
-        child: Container(
-          width: 300,
-          padding: const EdgeInsets.all(16),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(20),
-            boxShadow: const [
-              BoxShadow(
-                color: Colors.black12,
-                blurRadius: 10,
-                offset: Offset(0, 5),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const CircleAvatar(
+              radius: 70,
+              backgroundImage: NetworkImage(
+                "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
               ),
-            ],
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              // Burger Image
-              ClipRRect(
-                borderRadius: BorderRadius.circular(15),
-                child: Image.network(
-                  "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600",
-                  height: 180,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
+            ),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              "John Doe",
+              style: TextStyle(
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            const SizedBox(height: 8),
+
+            const Text(
+              "Flutter Developer",
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.blue,
+              ),
+            ),
+
+            const SizedBox(height: 8),
+
+            const Text(
+              "john@example.com",
+              style: TextStyle(
+                fontSize: 18,
+                color: Colors.black54,
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            ElevatedButton.icon(
+              style: ElevatedButton.styleFrom(
+                backgroundColor:
+                isFollowing ? Colors.green : Colors.blue,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 30,
+                  vertical: 15,
                 ),
               ),
-
-              const SizedBox(height: 20),
-
-              const Text(
-                "Cheese Burger",
-                style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
+              onPressed: () {
+                setState(() {
+                  isFollowing = !isFollowing;
+                });
+              },
+              icon: Icon(
+                isFollowing
+                    ? Icons.check
+                    : Icons.person_add_alt_1,
+                color: Colors.white,
+              ),
+              label: Text(
+                isFollowing ? "Following" : "Follow",
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
                 ),
               ),
-
-              const SizedBox(height: 10),
-
-              const Text(
-                "Fresh & Delicious Burger\nwith Cheese",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 18,
-                  color: Colors.grey,
-                ),
-              ),
-
-              const SizedBox(height: 20),
-
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.star, color: Colors.amber),
-                  SizedBox(width: 5),
-                  Text(
-                    "4.8 (250 Reviews)",
-                    style: TextStyle(fontSize: 18),
-                  ),
-                ],
-              ),
-
-              const SizedBox(height: 20),
-
-              const Text(
-                "₹249",
-                style: TextStyle(
-                  fontSize: 36,
-                  color: Colors.deepOrange,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-
-              const SizedBox(height: 25),
-
-              SizedBox(
-                width: double.infinity,
-                height: 55,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.deepOrange,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  ),
-                  onPressed: () {},
-                  child: const Text(
-                    "Order Now",
-                    style: TextStyle(
-                      fontSize: 22,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
