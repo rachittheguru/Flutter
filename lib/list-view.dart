@@ -124,7 +124,6 @@ class FoodMenuScreen extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-
                 trailing: const Icon(
                   Icons.shopping_cart_outlined,
                   color: Colors.green,
