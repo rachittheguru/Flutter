@@ -1,0 +1,164 @@
+Existing water-tracking applications have several limitations:
+
+1. Many applications use fixed daily water targets.
+2. Environmental factors such as temperature and humidity are often ignored.
+3. Users receive reminders without understanding their actual hydration progress.
+4. Historical hydration data is not always converted into meaningful insights.
+5. Water wastage is generally not tracked alongside water consumption.
+6. Campus water infrastructure problems do not have a dedicated reporting workflow.
+7. AI features in many applications are limited to generic chatbot functionality.
+
+Therefore, there is a need for a system that combines personal hydration intelligence with water sustainability and real-world infrastructure reporting.
+
+⸻
+
+3. Proposed Solution
+
+AquaSense provides a centralized mobile platform where users can:
+
+* Create a personalized hydration profile.
+* Receive an estimated daily hydration target.
+* Log water consumption.
+* Receive weather-aware recommendations.
+* Monitor hydration progress.
+* View an app-generated hydration risk indicator.
+* Analyze weekly and monthly hydration patterns.
+* Record avoidable water wastage.
+* Monitor water-use efficiency.
+* Report water-related campus problems.
+* Track submitted reports.
+* Receive AI-generated insights based on historical data.
+
+The system is designed around a modular architecture so that additional technologies such as IoT-based water-flow sensors can be integrated in future versions.
+
+⸻
+
+4. Major Modules
+
+4.1 User Authentication and Profile
+
+The application provides user registration and login functionality. Users can create profiles containing information required for personalization, such as weight, activity level and daily routine.
+
+Authentication and authorization are handled securely through the backend.
+
+4.2 Personalized Hydration Engine
+
+Instead of using one fixed target for every user, AquaSense generates an estimated hydration requirement using configurable factors such as:
+
+* User profile
+* Activity level
+* Daily routine
+* Environmental conditions
+
+The calculation is deterministic and transparent so that the user can understand why the recommendation changed.
+
+4.3 Weather-Aware Recommendation
+
+The application can integrate with a weather service to retrieve environmental information such as temperature and humidity.
+
+The information can be used to adjust the application’s hydration recommendation.
+
+For example:
+
+Base estimated requirement: 2.4 L
+Environmental adjustment: +0.3 L
+Activity adjustment: +0.2 L
+Estimated daily target: 2.9 L
+
+These values are application estimates and are not intended to replace professional medical advice.
+
+4.4 Hydration Risk Analytics
+
+The system compares expected hydration progress with actual logged intake.
+
+For example:
+
+Expected intake by 4 PM: 1.8 L
+Actual intake: 1.1 L
+Current gap: 0.7 L
+
+The application can convert these factors into an understandable Hydration Risk Score and display the result using a low, moderate or high status.
+
+The score is intended as a wellness indicator rather than a medical diagnosis.
+
+4.5 Water Consumption and Analytics
+
+Users can quickly record water intake using predefined quantities or a custom amount.
+
+Historical data is stored and visualized through:
+
+* Daily statistics
+* 7-day trends
+* 30-day trends
+* Target achievement
+* Average intake
+* Consistency
+* Risk history
+
+This allows users to understand long-term behavior rather than only viewing today’s consumption.
+
+4.6 Water Waste Intelligence
+
+AquaSense extends beyond hydration by tracking avoidable water wastage.
+
+Users can record:
+
+* Container quantity
+* Consumed quantity
+* Remaining quantity
+* Reason for wastage
+
+The application can calculate:
+
+Water Waste = Total Water Available − Water Consumed
+
+The resulting data is presented through daily and weekly sustainability metrics.
+
+4.7 Campus Water Issue Reporting
+
+This module addresses a practical institutional problem.
+
+Students can report:
+
+* Water leakage
+* Broken taps
+* Damaged dispensers
+* Water availability problems
+* Water-station issues
+* Other water-related infrastructure problems
+
+Reports may contain:
+
+* Category
+* Location
+* Description
+* Photograph
+* Priority
+* Date and time
+
+Administrators can manage reports through statuses such as:
+
+Submitted → Assigned → In Progress → Resolved
+
+This creates a basic digital workflow between students and campus maintenance.
+
+4.8 AI-Powered Insights
+
+The AI module is designed to analyze actual application data rather than functioning as a generic chatbot.
+
+Examples of possible insights include:
+
+* Consistently missed hydration periods
+* Changes in weekly hydration performance
+* Water-waste trends
+* Target achievement patterns
+
+AI-generated information is presented as an insight layer, while the core calculations remain deterministic and testable.
+
+⸻
+
+5. Technology and Architecture
+
+The proposed application uses Flutter and Dart for cross-platform mobile development.
+
+The backend can be developed using Node.js and Express.js, while MongoDB can be used for persistent data storage.
