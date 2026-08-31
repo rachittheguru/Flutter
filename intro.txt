@@ -1,0 +1,59 @@
+AquaSense — Smart Hydration & Water Intelligence
+
+AquaSense is a Flutter-based smart hydration and water sustainability application designed to solve two connected real-world problems: poor personal hydration management and avoidable water wastage.
+
+Unlike conventional water-tracking applications that only record the amount of water consumed and generate fixed reminders, AquaSense provides personalized and dynamic hydration recommendations based on user information, activity patterns and environmental conditions. The application can use weather information to adapt the user’s recommended daily hydration target and calculate an app-generated hydration risk indicator by comparing expected and actual intake.
+
+The application also introduces a Water Waste Intelligence module that allows users to record avoidable water wastage and understand their personal water-use efficiency through daily, weekly and monthly analytics.
+
+A major differentiating feature is the Campus Water Issue Reporting System. Students can report water-related infrastructure problems such as leaking taps, damaged dispensers, unavailable water stations and other issues by providing a location, description and optional photograph. Reports can be tracked through statuses such as Submitted, Assigned, In Progress and Resolved, creating a practical connection between students and campus maintenance.
+
+AquaSense can also provide AI-powered personal insights based on the user’s historical hydration and waste data. Instead of functioning as a generic chatbot, the AI layer is intended to identify patterns and provide understandable, actionable observations.
+
+Key Features
+
+* Personalized hydration target
+* Weather-aware hydration recommendations
+* Hydration progress tracking
+* Hydration risk analytics
+* Smart hydration reminders
+* 7-day and 30-day analytics
+* Water-waste tracking
+* Sustainability/impact metrics
+* Campus water-issue reporting
+* Photo and location-based reports
+* Report status tracking
+* AI-generated personalized insights
+* Authentication and user profiles
+* Offline-friendly data handling
+* Admin reporting dashboard
+
+Technology Stack
+
+Frontend: Flutter, Dart
+Backend: Node.js, Express.js
+Database: MongoDB
+Authentication: JWT
+APIs: Weather API, AI API
+Charts: Flutter charting library
+Development: Git & GitHub
+
+Project Objective
+
+The objective of AquaSense is to transform a simple water-consumption tracker into a data-driven hydration and water-sustainability platform that demonstrates mobile application development, API integration, backend development, database management, analytics, AI integration and real-world problem solving.
+
+⸻
+
+2. College Synopsis — 2–3 Pages
+
+AquaSense — Smart Hydration & Water Intelligence
+
+1. Introduction
+
+Water is essential for everyday human functioning, yet people often fail to maintain consistent hydration throughout the day. Conventional water-tracking applications generally depend on manually entered consumption data and fixed reminders. Such applications can help users record their intake, but they provide limited personalization and usually do not consider environmental conditions, activity patterns or water wastage.
+
+At the same time, water wastage remains a significant practical problem in homes, workplaces and educational institutions. Leaking taps, damaged dispensers, overflowing systems and careless consumption can result in avoidable water loss. Students may notice these issues but often lack a structured method to report and track them.
+
+AquaSense is proposed as a Flutter-based smart hydration and water-intelligence platform that addresses both problems through a single application.
+
+The system combines personalized hydration tracking, dynamic recommendations, environmental data, hydration analytics, water-waste monitoring and campus water-issue reporting. The project also incorporates an AI layer to generate meaningful insights from user data.
